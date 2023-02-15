@@ -6,7 +6,7 @@ export const Home = () =>{
 	return(
 		<div>
 		<Navigation/>
-		{"THis is the home screen"}
+		{"This is the home screen"}
 		</div>
 	)
 

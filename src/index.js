@@ -3,14 +3,15 @@ import React from 'react';
 import {createRoot} from "react-dom/client";
 import {createBrowserRouter, RouterProvider, Route, Link} from 'react-router-dom'
 import {Timer} from './pages/Timer.js'
-import {Home} from './pages/Home.js'
+import {Home} from './pages/Home.js';
+import {Blog} from './pages/Blog.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 
 const	router	=	createBrowserRouter([
 	{
 		path:'/',
-		element:(<div>"/timer to go to timer app"</div>)
+		element:(<Home/>)
 	},
 	{
 		path:'/timer',
@@ -19,8 +20,12 @@ const	router	=	createBrowserRouter([
 	{
 		path:'/home',
 		element:<Home/>
-
+	},
+	{
+		path:'/blog',
+		element:<Blog/>
 	}
+
 	
 
 ])
