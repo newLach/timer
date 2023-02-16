@@ -6,7 +6,6 @@ export const Home = () =>{
 	return(
 		<div>
 		<Navigation/>
-		{"This is the home screen"}
 		{"Hi, my name is Lachie and I'\''m trying to get into the programming industry. There are afew reasons for this, which I will expand on in the future, but a good way to get in is to build a portfolio." }
 		{"Okay, but where do I start? Well, turns out during the process of portfolio making, I should write about what I learned, how I overcome this, etc."}
 		{"So second question. Where do I write? Probably a blog site right? Well, which one?"}
