@@ -15,7 +15,7 @@ export const Navigation = ()=>{
 		<Nav className="me-auto">
 		<Nav.Link href="home">Home</Nav.Link>
 		<Nav.Link href="timer">Timer</Nav.Link>
-		<Nav.Link href="blogs"> Blogs</Nav.Link>
+		<Nav.Link href="blog"> Blogs</Nav.Link>
 		<NavDropdown title="Dropdown" id="basic-nav-dropdown">
 
 		<NavDropdown.Item href="#action/3.1">
