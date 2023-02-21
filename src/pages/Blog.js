@@ -17,7 +17,7 @@ export const Blog = () =>{
 		e.preventDefault();
 
 		const newBlog ={...form};
-		await fetch("http://localhost:5000/record/add", {
+		await fetch("https://timerserver3.onrender.com/record/add", {
 			method: "POST",
 			headers:{
 			"Content-Type": "application/json",
@@ -35,7 +35,7 @@ export const Blog = () =>{
 
 
 	async function getBlogs(){
-		const response =	await fetch(`http://localhost:5000/record/`);
+		const response =	await fetch(`https://timerserver3.onrender.com/record`);
 		if(!response.ok){
 			const message = `An error had occurred: ${response.statusText}`;
 			window.alert(message);
