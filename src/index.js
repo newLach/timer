@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import ReactDOM from "react-dom";
 import {createRoot} from "react-dom/client";
 import {createBrowserRouter, RouterProvider, Route, Link} from 'react-router-dom'
 import {Timer} from './pages/Timer.js'
