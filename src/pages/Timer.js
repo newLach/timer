@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
+
 export const Timer = () =>{
         const buttons = ["start","up","down","reset","stop"]
         const[display, setDisplay] = useState(0)

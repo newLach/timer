@@ -2,13 +2,16 @@ import React, {useState, useEffect} from 'react'
 import Button from 'react-bootstrap/Button';
 import {Navigation} from '../components/Navigation';
 import {useForm} from 'react-hook-form';
-
+import BlogComponent from '../components/BlogComponent.js'
 
 export const Blog = () =>{
 	const [inputText, setForm] =	useState("")
 	const [blogList, setBlogList] = useState([])
 
-	
+	const setList = (list) =>{
+
+		setBlogList(list)
+	}
 	useEffect(()=>{
 	async function getBlogs(){
 		const response =	await fetch(`https://timerserver3.onrender.com/record`);
@@ -19,7 +22,7 @@ export const Blog = () =>{
 		}
 
 		const blogListArray =	await response.json();
-		setBlogList(blogListArray)
+		setList(blogListArray)
 		return;
 
 	}
@@ -56,7 +59,18 @@ export const Blog = () =>{
 
 
 
-	const getList = blogList.map(blog =><p>{blog.blogText}</p>)
+	const getList = blogList.slice(0)
+		.reverse()
+		.map(
+			blog =>
+			<BlogComponent 
+			blog={blog}
+			/>
+			
+		)
+		
+		
+	
 
 	
 
