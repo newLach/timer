@@ -7,11 +7,11 @@ import {Home} from './pages/Home.js';
 import {Blog} from './pages/Blog.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
-
+import styles from './App.css'
 const	router	=	createBrowserRouter([
 	{
 		path:'/',
-		element:(<Home/>)
+		element:(<Blog/>)
 	},
 	{
 		path:'/timer',
@@ -30,6 +30,8 @@ const	router	=	createBrowserRouter([
 
 ])
 createRoot(document.getElementById("root")).render(
-	<Container><RouterProvider router={router}/>
+        <div style={{backgroundColor:"#cccccc"}}>	
+	<Container style={{backgroundColor:"white"}}><RouterProvider router={router}/>
 	</Container>
+	</div>
 );
