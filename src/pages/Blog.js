@@ -1,34 +1,23 @@
 import React, {useState, useEffect} from 'react'
-import Button from 'react-bootstrap/Button';
 import {Navigation} from '../components/Navigation';
-import {useForm} from 'react-hook-form';
 import BlogComponent from '../components/BlogComponent.js'
-
+import { getBlogs, newBlog } from '../api/api.js'
 export const Blog = () =>{
 	const [inputText, setForm] =	useState("")
 	const [blogList, setBlogList] = useState([])
 
 	const setList = (list) =>{
-
 		setBlogList(list)
 	}
 	useEffect(()=>{
-	async function getBlogs(){
-		const response =	await fetch(`https://timerserver3.onrender.com/record`);
-		if(!response.ok){
-			const message = `An error had occurred: ${response.statusText}`;
-			window.alert(message);
-			return
+		async function start(){
+			const data = await getBlogs();
+			setList(data)
 		}
-
-		const blogListArray =	await response.json();
-		setList(blogListArray)
-		return;
-
-	}
-		getBlogs();
-		return;
+		start();
 	}, [blogList.length])
+
+
 
 	function updateForm(value){
 		return setForm((prev)=>{
@@ -38,26 +27,10 @@ export const Blog = () =>{
 
 	async function onSubmit(e){
 		e.preventDefault();
-
-		const newBlog ={...inputText};
-		await fetch("https://timerserver3.onrender.com/record/add", {
-			method: "POST",
-			headers:{
-			"Content-Type": "application/json",
-			},
-			body: JSON.stringify(newBlog),
-		})
-			.catch(error => {
-				window.alert(error);
-				return;
-			});
-		setForm({blogText:""})
+		const blog = {...inputText}
+		await newBlog(blog)
+	setForm({blogText:""})
 	}
-
-
-
-
-
 
 	const getList = blogList.slice(0)
 		.reverse()
@@ -66,15 +39,8 @@ export const Blog = () =>{
 			<BlogComponent 
 			blog={blog}
 			/>
-			
 		)
-		
-		
 	
-
-	
-
-
 	return(
 		<div >
 		<Navigation/>
