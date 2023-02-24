@@ -5,3 +5,17 @@
 	font-size: 20px;
 	line-height: 30px;
 	}
+
+.blog-container{
+
+	margin: 30px;
+	padding:15px;
+	border-style: solid;
+	border-radius: 25px;
+	display: flex;
+	flexDirection: 'row';
+	justifyContent: 'flext-start';
+
+
+
+}

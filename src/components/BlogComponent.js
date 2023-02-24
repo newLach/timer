@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
-
+import '../App.css'
 export const BlogComponent = (props) =>{
 
 	async function deleteBlog(){
@@ -11,13 +11,21 @@ export const BlogComponent = (props) =>{
 	}
 
 	return(
-		<div>
-	<p>{props.blog.blogText}</p>
+		<div className="blog-container">
+
+
+		<div style={{flex: 8}}>
+		{props.blog.blogText}
+		</div>
+
+		<div style={{flex:2}}>
 		<Button 
 		onClick={() => deleteBlog()}>
-		Delete Blog
+		{"Delete"}
 		</Button>
-</div>
+		</div>
+		
+		</div>
 )
 }
 export default BlogComponent;

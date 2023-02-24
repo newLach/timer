@@ -6,20 +6,16 @@ import { getBlogs, newBlog } from '../api/api.js'
 
 export const Blog = () =>{
 	const [inputText, setForm] =	useState("")
-
 	function updateForm(value){
 		return setForm((prev)=>{
 			return{...prev, ...value };
 		})
 	}
-
 	async function onSubmit(e, data){
 		e.preventDefault();
 		const blog = {...data}
 		await newBlog(blog)
-	}
-
-	
+	}	
 	return(
 		<div >
 		<Navigation/>
