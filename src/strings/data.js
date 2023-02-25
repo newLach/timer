@@ -9,4 +9,4 @@ export const months=["January","February","March","April","May","June","July","A
 
 const url ='http://localhost:5000/';
 const api ='https://timerserver3.onrender.com/'
-export const apiURL=url
+export const apiURL=api
