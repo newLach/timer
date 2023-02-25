@@ -11,16 +11,14 @@ export const Blog = () =>{
 			return{...prev, ...value };
 		})
 	}
-	async function onSubmit(e, data){
-		e.preventDefault();
-		const blog = {...data}
-		await newBlog(blog)
-	}	
+
+
 	return(
 		<div >
 		<Navigation/>
-		<Input send={onSubmit}/>
+		<Input />
 		<BlogList/>
+		
 		</div>
 
 	)

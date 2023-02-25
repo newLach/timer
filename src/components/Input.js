@@ -1,25 +1,35 @@
 import React , {useState} from 'react';
 import {BlogList} from './BlogList.js'
+import {newBlog} from '../api/api.js';
+
 export const Input = (props) =>{
-	const[inputText, setForm] = useState("");
+	const[form, setForm] = useState({blogText: "", creationDate: Date(), project: "Website"});
 	
 
-	const updateForm = (value)=>{
+	async function onSubmit(e){
+	
+		e.preventDefault();
+		const blog = {...form}
+		await newBlog(blog);
 
-		return setForm( (prev)=>{
-			return{...prev, ...value};
-		})
+
+	}
+	const updateForm = (value)=>{
+		
+		return setForm((prev) => {
+			return {...prev, ...value}
+		});
 	}
 
 	return(
 		<div>
 		<form
-		onSubmit={e => props.send(e, inputText)}>
+		onSubmit={onSubmit}>
 		<textarea
 		rows={'10'}
 		cols={'30'}
-		value={inputText.blogText}
-		onChange={(e) => updateForm({blogText:e.target.value})}/>
+		value={form.blogText}
+		onChange={e =>updateForm({blogText: e.target.value})}/>
 		<input
 		type={'submit'}
 		value={'Create blog'}

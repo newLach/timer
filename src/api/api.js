@@ -1,9 +1,8 @@
-
-
+import {apiURL} from '../strings/data.js'
 
 
 export async function getBlogs(){
-	const response = await fetch(`https://timerserver3.onrender.com/record`);
+	const response = await fetch(`${apiURL}record`);
 	if(!response.ok){
 		const	message = `An error has occured: ${response.statusText}. If this is the first load for the day, try a refresh. Free service = slow servie :)`;
 		window.alert(message);
@@ -16,7 +15,8 @@ export async function getBlogs(){
 
 
 export async function newBlog(parameterBlog){
-	const	res = await fetch(`https://timerserver3.onrender.com/record/add`, {
+	console.log(JSON.stringify(parameterBlog))
+	const	res = await fetch(`${apiURL}record/add`, {
 		method: 'POST', 
 		headers:{
 			"Content-Type": "application/json",
