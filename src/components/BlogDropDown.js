@@ -11,12 +11,22 @@ export const BlogDropDown = (props) => {
 		<Container>
 		<Navbar.Toggle aria-controls='basic-navbar-nav'/>
 		<Navbar.Collapse id='basic-navbar-nav'>
-	
-		<Button>Edit</Button>
 		<Button
 		onClick={()=> props.remove()}>Delete</Button>
-	</Navbar.Collapse>
-				</Container>
+		{props.editTheme == false ?
+			<Button
+			onClick={()=> props.callEdit()}>Edit</Button>
+		
+			:
+			
+			<Button
+			onClick={() => props.save()}>
+			Save
+			</Button>
+		}
+
+		</Navbar.Collapse>
+		</Container>
 		</Navbar>
 	);
 }
