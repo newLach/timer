@@ -1,12 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Button from 'react-bootstrap/Button';
 import '../../App.css';
 import BlogDropDown from './BlogDropDown.js';
+import Time from './Time.js'
 import {newBlog} from '../../api/api.js';
 const BlogComponent = (props) =>{
 	const[onEdit, changeOnEdit] = useState(false);
 	const [form, setForm]	=	useState({blogText:props.blog.blogText});
 
+	
+	
 	async function deleteBlog(){
 		await fetch(`https://timerserver3.onrender.com/${props.blog._id}`, {
 			method: "DELETE",
@@ -17,7 +20,7 @@ const BlogComponent = (props) =>{
 	const updateBlogText = (value) =>{
 		return setForm(prev => {return {...prev, ...value}})
 	}
-	
+
 	const callEdit = () =>{
 		changeOnEdit(!onEdit)
 	}
@@ -26,26 +29,24 @@ const BlogComponent = (props) =>{
 		callEdit()
 		let editedBlog = {blogText: form.blogText, creationDate: props.blog.creationDate, project: props.blog.project};
 		await deleteBlog();
-		
+
 		await newBlog(editedBlog)
-		
+
 	}
 	return(
 		<div className="blog-container">
-		
+
 		{
 			onEdit===false ? 
 			<>
-			
+
 			<div style={{flex: 8}}>
-			<p className="creationTime">
-			{props.blog.creationDate}
-			</p>
+			<Time data={props.blog.creationDate}/>
 			{form.blogText}
-						</div>
+			</div>
 
 			<div style={{flex:2}}>
-{props.blog.project}
+			{props.blog.project}
 
 			<BlogDropDown
 			editTheme={onEdit}
@@ -54,9 +55,9 @@ const BlogComponent = (props) =>{
 			save={() =>save()}/>
 			</div>
 			</>
-			
+
 			:
-			
+
 			<>
 			<textarea
 			rows={'10'}

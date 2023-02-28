@@ -15,7 +15,6 @@ export async function getBlogs(){
 
 
 export async function newBlog(parameterBlog){
-	console.log(JSON.stringify(parameterBlog))
 	const	res = await fetch(`${apiURL}record/add`, {
 		method: 'POST', 
 		headers:{
@@ -27,7 +26,6 @@ export async function newBlog(parameterBlog){
 			window.alert(err);
 			return;
 		});		
-
 }
 
 
