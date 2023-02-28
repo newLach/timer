@@ -1,6 +1,6 @@
 import React , {useState} from 'react';
 import {BlogList} from './BlogList.js'
-import {newBlog} from '../api/api.js';
+import {newBlog} from '../../api/api.js';
 
 export const Input = (props) =>{
 	const[form, setForm] = useState({blogText: "", creationDate: Date(), project: "Website"});

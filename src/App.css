@@ -7,7 +7,7 @@
 	}
 
 .blog-container{
-
+	background-color: white;
 	margin: 30px;
 	padding:15px;
 	border-style: solid;
@@ -15,6 +15,7 @@
 	display: flex;
 	flexDirection: 'row';
 	justifyContent: 'flext-start';
+	font-size: 12;
 }
 .square{
  background: #fff;
@@ -29,4 +30,12 @@
   padding: 0;
   text-align: center;
   width: 34px;
+}
+.creationTime{
+	font-size:12;
+
+}
+.blogDropDown{
+	background-color:white;
+
 }

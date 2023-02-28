@@ -1,6 +1,6 @@
 import React, { useState, useEffect }  from 'react';
 import BlogComponent from './BlogComponent.js'
-import {getBlogs} from '../api/api.js'
+import {getBlogs} from '../../api/api.js'
 
 export const BlogList = ()  => {
 	const [blogList, setBlogList] = useState([]);

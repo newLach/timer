@@ -30,7 +30,8 @@ const	router	=	createBrowserRouter([
 ])
 createRoot(document.getElementById("root")).render(
         <div style={{backgroundColor:"#cccccc"}}>	
-	<Container style={{backgroundColor:"white"}}><RouterProvider router={router}/>
+	<Container>
+	<RouterProvider router={router}/>
 	</Container>
 	</div>
 );

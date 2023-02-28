@@ -7,8 +7,9 @@ import Button from 'react-bootstrap/Button';
 export const BlogDropDown = (props) => {
 
 	return(
-		<Navbar bg="light" expand ='lg'>
-		<Container>
+		<div className = 'blogDropDown'>
+		<Navbar className='blogDropDown' variant='light' expand ='lg'>
+		<Container style={{backgroundColor: 'white'}}>
 		<Navbar.Toggle aria-controls='basic-navbar-nav'/>
 		<Navbar.Collapse id='basic-navbar-nav'>
 		<Button
@@ -28,6 +29,7 @@ export const BlogDropDown = (props) => {
 		</Navbar.Collapse>
 		</Container>
 		</Navbar>
+		</div>
 	);
 }
 export default BlogDropDown

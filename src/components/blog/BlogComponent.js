@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
-import '../App.css';
+import '../../App.css';
 import BlogDropDown from './BlogDropDown.js';
-import {newBlog} from '../api/api.js';
+import {newBlog} from '../../api/api.js';
 const BlogComponent = (props) =>{
 	const[onEdit, changeOnEdit] = useState(false);
 	const [form, setForm]	=	useState({blogText:props.blog.blogText});
@@ -38,16 +38,16 @@ const BlogComponent = (props) =>{
 			<>
 			
 			<div style={{flex: 8}}>
-			< div style={{fontSize: 12}}>
+			<p className="creationTime">
 			{props.blog.creationDate}
-			</div>
+			</p>
 			{form.blogText}
 						</div>
 
 			<div style={{flex:2}}>
 {props.blog.project}
 
-			<BlogDropDown 
+			<BlogDropDown
 			editTheme={onEdit}
 			remove={() => deleteBlog()}
 			callEdit={() => callEdit()}

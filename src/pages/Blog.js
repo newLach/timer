@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {Navigation} from '../components/Navigation';
-import Input from '../components/Input.js'
-import BlogList from '../components/BlogList.js'
+import Input from '../components/blog/Input.js'
+import BlogList from '../components/blog/BlogList.js'
 import { getBlogs, newBlog } from '../api/api.js'
 
 export const Blog = () =>{
