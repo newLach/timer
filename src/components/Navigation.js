@@ -15,6 +15,7 @@ export const Navigation = ()=>{
 		<Nav className="me-auto">
 		<Nav.Link href="timer">Timer</Nav.Link>
 		<Nav.Link href="blog"> Blogs</Nav.Link>
+		<Nav.Link href ="chess">Chess</Nav.Link>
 		</Nav>
 		</Navbar.Collapse>
 		</Container>

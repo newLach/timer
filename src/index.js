@@ -3,8 +3,10 @@ import {createRoot} from "react-dom/client";
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import {Timer} from './pages/Timer.js'
 import {Blog} from './pages/Blog.js';
+import {ChessPage} from './pages/ChessPage.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
+import './App.css'
 const	router	=	createBrowserRouter([
 	{
 		path:'/',
@@ -13,6 +15,10 @@ const	router	=	createBrowserRouter([
 	{
 		path:'/timer',
 		element:<Timer/>
+	},
+	{
+		path:'/chess',
+		element:<ChessPage/>
 	},
 	{
 		path:'/blog',
